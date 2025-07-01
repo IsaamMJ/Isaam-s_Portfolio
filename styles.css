@@ -1,0 +1,254 @@
+/* General Styling */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(120deg, #ffe5d9, #d3c4f3);
+    color: white;
+    overflow-x: hidden;
+}
+
+h1, h2, h3 {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #e74c3c;
+    color: white;
+    border-radius: 20px;
+    transition: all 0.3s;
+    font-weight: bold;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+    background: #c0392b;
+}
+
+header {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: radial-gradient(circle, #ffe5d9, #d3c4f3);
+    color: white;
+}
+
+header h1 {
+    font-size: 4rem;
+}
+
+header p {
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+
+/* Experience Section */
+section {
+    padding: 50px 20px;
+    background: #e74c3c;
+}
+
+.tab-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.tab-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.tab-buttons button {
+    background: #34495e;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.tab-buttons button:hover {
+    background: #1c1c1c;
+}
+
+.tab-buttons button.active {
+    background: #e74c3c;
+}
+
+.tab-content {
+    display: none;
+    background: #34495e;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 800px;
+    text-align: left;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Experience and Education Cards */
+.experience-content,
+.education-content,
+.education-card {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    text-align: left;
+    margin-top: 20px;
+}
+
+.experience-card,
+.education-card {
+    background: #161b22;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    width: 80%;
+    max-width: 800px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experience-card:hover,
+.education-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.4);
+}
+
+.experience-card h4,
+.education-card h4 {
+    font-size: 20px;
+    color: #4eb4ff;
+    margin-bottom: 10px;
+}
+
+.experience-card p,
+.education-card p {
+    font-size: 14px;
+    color: #c4c4c4;
+    margin: 5px 0;
+}
+
+
+/* General Skills Section */
+.skills {
+    padding: 50px 20px;
+    background-color: #e74c3c;
+    color: #fff;
+}
+
+/* Skills Header */
+.skills-header {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.skills-header h2 {
+    font-size: 24px;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.skills-header p {
+    font-size: 14px;
+    color: #c4c4c4;
+}
+
+/* Skills Container */
+.skills-container {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Skills Content */
+.skills-content {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 10px;
+    scroll-snap-type: x mandatory;
+}
+
+.skills-content::-webkit-scrollbar {
+    height: 8px;
+}
+
+.skills-content::-webkit-scrollbar-thumb {
+    background: #4eb4ff;
+    border-radius: 10px;
+}
+
+.skills-content::-webkit-scrollbar-track {
+    background: #161b22;
+}
+
+/* Skills Cards */
+.skills-card {
+    background-color: #161b22;
+    flex: 0 0 auto;
+    width: 250px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    scroll-snap-align: start;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skills-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.4);
+}
+
+.skills-card h3 {
+    font-size: 20px;
+    color: #4eb4ff;
+    margin-bottom: 10px;
+}
+
+.skills-card p {
+    font-size: 14px;
+    color: #c4c4c4;
+    line-height: 1.6;
+}
+
+footer {
+    background: #161b22;
+    text-align: center;
+    padding: 20px;
+    color: white;
+}
+
+footer .social-links a {
+    margin: 0 10px;
+    color: white;
+    font-size: 1.5rem;
+}
+
+footer .social-links a:hover {
+    color: #e74c3c;
+}

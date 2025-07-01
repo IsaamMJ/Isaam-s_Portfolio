@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Isaam's Portfolio - A showcase of projects, skills, and experience in web development and design.">
+    <title>Mohamed Isaam M J - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@600&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* General Styling */
+    body {
+        margin: 0;
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(to right, #3c1053, #ad5389); /* Dark gradient background */
+        color: white;
+        overflow-x: hidden;
+    }
+    
+    h1, h2, h3 {
+        margin: 0;
+        padding: 0;
+    }
+    
+    a {
+        text-decoration: none;
+        color: white;
+    }
+    
+    .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        text-align: center;
+    }
+    
+    .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        background: #1f1f32;
+        color: white;
+        border-radius: 20px;
+        transition: all 0.3s;
+        font-weight: bold;
+    }
+    
+    .btn:hover {
+        transform: scale(1.1);
+        background:#1a1a2e;
+    }
+    
+    header {
+        height: 80vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background: linear-gradient(to right, #3c1053, #ad5389);
+        color: white;
+        padding-top: 10px; 
+    }
+    
+    header h1 {
+        font-size: 4rem;
+    }
+    
+    header p {
+        font-size: 1.5rem;
+        margin-top: 10px;
+    }
+
+    .greeting {
+        font-family: 'Arial', sans-serif;
+        font-size: 20px;
+        font-weight: bold;
+        margin: 0;
+        padding-top: 10px;
+    }
+
+    /* Name styles */
+    .name {
+        font-family: 'Poppins', sans-serif; /* Custom font for name */
+        font-size: 36px;
+        font-weight: bold;
+        margin: 10px 0;
+    }
+
+    /* Roles styles */
+    .roles {
+        font-family: 'Roboto', sans-serif; /* Distinct font for roles */
+        font-size: 18px;
+        font-weight: 500;
+        margin: 5px 0 20px;
+    }
+
+    /* Catchy quote styles */
+    .catchy-quote {
+        font-family: 'Cursive', 'Georgia', serif;
+        font-size: 18px;
+        font-style: italic;
+        margin: 10px 0 20px;
+        line-height: 1.5;
+        color: #f8e8fc;
+    }
+
+    /* Button styles */
+    .view-cv-btn,
+    .view-git-btn {
+        background: linear-gradient(to right, #3c1053, #ad5389);
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 50px;
+        font-size: 16px;
+        cursor: pointer;
+        align-items: center;
+        transition: transform 0.3s, box-shadow 0.3s;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .view-cv-btn a,
+    .view-git-btn a {
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+    }
+
+    .view-cv-btn:hover,
+    .view-git-btn:hover {
+        transform: scale(1.1);
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    
+    /* Experience Section */
+    section {
+        padding: 50px 20px;
+        background: linear-gradient(to right, #3c1053, #ad5389);
+        color: white;
+    }
+    
+    .tab-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .tab-buttons {
+        display: flex;
+        gap: 10px;
+    }
+    
+    .tab-buttons button {
+        background:linear-gradient(to right, #3c1053, #ad5389);
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    
+    .tab-buttons button:hover {
+        background: linear-gradient(to right, #3c1053, #ad5389);
+    }
+    
+    .tab-buttons button.active {
+        background: linear-gradient(to right, #3c1053, #ad5389);
+    }
+    
+    .tab-content {
+        display: none;
+        background: linear-gradient(to right, #3c1053, #ad5389);
+        padding: 20px;
+        border-radius: 10px;
+        width: 80%;
+        max-width: 800px;
+        text-align: left;
+        color: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    
+    .tab-content.active {
+        display: block;
+    }
+
+    .section {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    
+    .section.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    /* Experience and Education Cards */
+    .experience-content,
+    .education-content,
+    .education-card {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        text-align: left;
+        margin-top: 20px;
+    }
+    
+    .experience-card,
+    .education-card {
+        background: linear-gradient(to right, #3c1053, #ad5389);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        width: 80%;
+        max-width: 800px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .experience-card:hover,
+    .education-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.4);
+    }
+    
+    .experience-card h4,
+    .education-card h4 {
+        font-size: 20px;
+        color: #210133;
+        margin-bottom: 10px;
+    }
+    
+    .experience-card p,
+    .education-card p {
+        font-size: 14px;
+        color: #c4c4c4;
+        margin: 5px 0;
+    }
+    
+    
+    /* General Skills Section */
+    .skills {
+        padding: 50px 20px;
+        background: linear-gradient(to right, #3c1053, #ad5389);
+        color: white;
+    }
+    
+    /* Skills Header */
+    .skills-header {
+        text-align: left;
+        margin-bottom: 20px;
+    }
+    
+    .skills-header h2 {
+        font-size: 24px;
+        color:#210133;
+        margin-bottom: 10px;
+    }
+    
+    .skills-header p {
+        font-size: 14px;
+        color: #dcdcdc;
+    }
+    
+    /* Skills Container */
+    .skills-container {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    /* Skills Content */
+    .skills-content {
+        display: flex;
+        gap: 20px;
+        overflow-x: auto;
+        padding: 10px;
+        scroll-snap-type: x mandatory;
+    }
+    
+    .skills-content::-webkit-scrollbar {
+        height: 8px;
+    }
+    
+    .skills-content::-webkit-scrollbar-thumb {
+        background:#210133;
+        border-radius: 10px;
+    }
+    
+    .skills-content::-webkit-scrollbar-track {
+        background:linear-gradient(to right, #3c1053, #ad5389);
+    }
+    
+    /* Skills Cards */
+    .skills-card {
+        background: linear-gradient(to right, #3c1053, #ad5389);
+        flex: 0 0 auto;
+        width: 250px;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        scroll-snap-align: start;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .skills-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.4);
+    }
+    
+    .skills-card h3 {
+        font-size: 20px;
+        color:#210133;
+        margin-bottom: 10px;
+    }
+    
+    .skills-card p {
+        font-size: 14px;
+        color: #c4c4c4;
+        line-height: 1.6;
+    }
+
+
+    .projects-section {
+        padding: 50px 40px;
+        background: linear-gradient(to right, #3c1053, #ad5389);
+        color: white;
+        text-align: center;
+    }
+    
+    .projects-header {
+        margin-bottom: 20px;
+    }
+    
+    .projects-header h2 {
+        font-size: 28px;
+        color: #210133;
+        margin-bottom: 10px;
+    }
+    
+    .projects-header p {
+        font-size: 16px;
+        color: #dcdcdc;
+    }
+    
+    .projects-container {
+        display: flex;
+        gap: 20px;
+        overflow-x: auto;
+        padding: 10px;
+        scroll-snap-type: x mandatory;
+        justify-content: center;
+        align-items: stretch; /* Ensures all cards align vertically */
+    }
+    
+    .projects-container::-webkit-scrollbar {
+        height: 8px;
+    }
+    
+    .projects-container::-webkit-scrollbar-thumb {
+        background: #210133;
+        border-radius: 10px;
+    }
+    
+    .projects-container::-webkit-scrollbar-track {
+        background: linear-gradient(to right, #3c1053, #ad5389);
+    }
+    
+    .project-card {
+        background: linear-gradient(to right, #3c1053, #ad5389);
+        flex: 0 0 300px; /* Fixed width for all cards */
+        height: 400px; /* Ensures uniform height */
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        scroll-snap-align: start;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between; /* Ensures spacing between elements */
+    }
+    
+    .project-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.4);
+    }
+    
+    .project-image img {
+        width: 100%;
+        height: 150px; /* Fixed image height */
+        object-fit: cover; /* Ensures images fill the space without distortion */
+        border-radius: 10px;
+        margin-bottom: 15px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+    
+    .project-card h3 {
+        font-size: 20px;
+        color: #210133;
+        margin-bottom: 10px;
+    }
+    
+    .project-card p {
+        font-size: 14px;
+        color: #c4c4c4;
+        line-height: 1.6;
+        margin-bottom: 10px;
+        text-align: center; /* Centers the text inside cards */
+    }
+    
+    .project-card strong {
+        color: #f3f3f3;
+        font-weight: bold;
+    }
+    
+    
+    .contact-container {
+        display: flex;
+        gap: 30px;
+        background: linear-gradient(to right, #3c1053, #ad5389);
+        border-radius: 15px;
+        padding: 30px;
+        max-width: 900px;
+        width: 100%;
+        align-content: center;
+        justify-content: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .form-section {
+        flex: 2;
+    }
+
+    .form-section h2 {
+        color:linear-gradient(to right, #3c1053, #ad5389);
+        margin-bottom: 20px;
+        font-size: 1.8rem;
+    }
+
+    .form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .form input, .form select, .form textarea {
+        width: 100%;
+        padding: 10px;
+        border-radius: 8px;
+        border: none;
+        outline: none;
+        background:linear-gradient(to right, #3c1053, #ad5389);
+        color: #c9d1d9;
+        font-size: 1rem;
+    }
+
+    .form textarea {
+        height: 100px;
+        resize: none;
+    }
+
+    .form button {
+        padding: 12px;
+        background: linear-gradient(to right, #3c1053, #ad5389);
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        font-size: 1rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .form button:hover {
+        background:linear-gradient(to right, #3c1053, #ad5389);
+    }
+
+    .contact-info {
+        padding-top: 60px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .contact-info div {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background:linear-gradient(to right, #3c1053, #ad5389);
+        padding: 10px;
+        border-radius: 8px;
+    }
+
+    .contact-info div span {
+        font-size: 1.5rem;
+        color:linear-gradient(to right, #3c1053, #ad5389);
+    }
+
+    @media (max-width: 768px) {
+        .container {
+            flex-direction: column;
+        }
+    }
+    
+    footer {
+        background: linear-gradient(to right, #3c1053, #ad5389);
+        text-align: center;
+        padding: 20px;
+        color: white;
+    }
+    
+    footer .social-links a {
+        margin: 0 10px;
+        color: white;
+        font-size: 1.5rem;
+    }
+    
+    footer .social-links a:hover {
+        color: #ff6f61;
+    }
+    </style>
+    
+</head>
+
+<body>
+    <!-- Navigation Bar Section -->
+<!-- Add Google Fonts in the <head> of your HTML -->
+    <nav style="background: linear-gradient(to right, #3c1053, #ad5389); padding: 20px; font-family: 'Roboto Slab', serif;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <!-- Name on the left -->
+            <h1 style="margin: 0; font-size: 1.5rem; color: white; font-family: 'Merriweather', serif;">Isaam🧑‍🎓</h1>
+    
+            <!-- Navigation Links on the right -->
+            <ul style="display: flex; list-style-type: none; margin: 0; padding: 0; gap: 20px;">
+                <li><a href="#home" style="color: white; font-size: 1.2rem; text-decoration: none; font-family: 'Roboto Slab', serif;">Home</a></li>
+                <li><a href="#about" style="color: white; font-size: 1.2rem; text-decoration: none; font-family: 'Roboto Slab', serif;">About Me</a></li>
+                <li><a href="#Project" style="color: white; font-size: 1.2rem; text-decoration: none; font-family: 'Roboto Slab', serif;">Project</a></li>
+                <li><a href="#connect" style="color: white; font-size: 1.2rem; text-decoration: none; font-family: 'Roboto Slab', serif;">Connect</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+<header style="background: linear-gradient(to right, #3c1053, #ad5389); padding: 10px 20px; color: white; text-align: center;">
+    <div class="container">
+        <p class="greeting">👋 Hello Everyone!</p>
+        <h1 class="name">Mohamed Isaam M J</h1>
+        <p class="roles">Software Developer | Front-end UI/UX Developer | Data Engineer | Data Scientist</p>
+        <p class="catchy-quote">"Crafting intuitive designs, engineering seamless solutions,<br>and unlocking the power of data to shape a smarter future."</p>
+        <button class="view-cv-btn">
+            <a href="https://drive.google.com/file/d/1Ps0Fi66eSqL70Zxar7-fdeV7AfYdnENf/view?usp=drive_link" target="_blank">View Resume</a>
+        </button>
+        <button class="view-git-btn">
+            <a href="https://github.com/IsaamMJ" target="_blank">Git Hub</a>
+        </button>
+    </div>
+</header>
+
+<section id="about" class="about" style="background: linear-gradient(to right, #3c1053, #ad5389); padding: 50px 20px; color: #ffffff; font-family: 'Open Sans', sans-serif;">
+    <div class="container" style="max-width: 1200px; margin: 0 auto;">
+        <div class="about-container" style="display: flex; flex-wrap: wrap; align-items: center; gap: 20px;">
+            <!-- Circular Image Section -->
+            <div class="about-image" style="flex: 1; text-align: center;">
+                <div style="width: 200px; height: 200px; margin: 0 auto; border-radius: 50%; overflow: hidden; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);">
+                    <img src="Image.jpg" alt="Isaam" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+            </div>
+            <!-- About Me Content Section -->
+            <div class="about-content" style="flex: 2; text-align: left;">
+                <h4 style="color: #eddedd; font-size: 1rem; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px; font-family: 'Lora', serif;">
+                    My Intro
+                </h4>
+                <h2 style="font-size: 2.5rem; margin-bottom: 15px; line-height: 1.2; color: #ffffff; font-family: 'Lora', serif;">
+                    About Me
+                </h2>
+                <p style="font-size: 1.2rem; color: #dcdcdc; line-height: 1.8; text-align: justify; font-family: 'Open Sans', sans-serif;">
+                    Hello😊! I'm Isaam, a final-year Computer Science student with a strong passion for AI, data engineering, and user-centric design. Proficient in Python, machine learning, and Big Data technologies such as Hadoop and Spark, with hands-on experience in building data pipelines, developing deep learning models, and exploring Generative AI. Let's build something amazing together!
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    
+    
+    
+
+    <section id="experience">
+        <div class="container">
+            <div class="tab-container">
+                <div class="tab-buttons">
+                    <button onclick="showTab('experience-content')" class="active">Experience</button>
+                    <button onclick="showTab('education-content')">Education</button>
+                    <button onclick="showTab('skills-content')">Skills</button>
+                </div>
+    
+                <!-- Experience Tab Content -->
+                <div class="tab-content active" id="experience-content">
+                    <h3>Experience</h3>
+                    <p>Here is a detailed overview of my professional experience:</p>
+                    <div class="experience-content">
+                        <!-- Each Experience Card -->
+                        <div class="experience-card">
+                            <h4>Frontend Developer Intern</h4>
+                            <p><strong>EnterKey Solutions</strong></p>
+                            <p><em>June 2023 - July 2023</em></p>
+                        </div>
+                        <div class="experience-card">
+                            <h4>Deep Learning Intern</h4>
+                            <p><strong>CDAC Thiruvananthapuram</strong></p>
+                            <p><em>June 2024 - July 2024</em></p>
+                        </div>
+                        <div class="experience-card">
+                            <h4>Big Data & Data Engineering Training</h4>
+                            <p><strong>Inceptez Technologies</strong></p>
+                            <p><em>March 2024 - January 2024</em></p>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Education Tab Content -->
+                <!-- Education Tab Content -->
+<div class="tab-content" id="education-content">
+    <h3>Education</h3>
+    <p>Here are the details of my academic qualifications:</p>
+    <div class="education-content">
+        <!-- B.Tech Degree -->
+        <div class="education-card">
+            <h4>B.Tech in Computer Science and Engineering</h4>
+            <p><strong>B S Abdur Rahman Crescent Institute of Science and Technology</strong></p>
+            <p><em>2021 - 2025</em></p>
+        </div>
+        <!-- Schooling: Pearl Matriculation -->
+        <div class="education-card">
+            <h4>Schooling</h4>
+            <p><strong>Pearl Matriculation Higher Secondary School, Therekalputhoor</strong></p>
+            <p><em>June 2016 - June 2021</em></p>
+        </div>
+        <!-- Schooling: International Indian School -->
+        <div class="education-card">
+            <h4>Schooling</h4>
+            <p><strong>International Indian School, Dammam</strong></p>
+            <p><em>November 2006 - June 2016</em></p>
+        </div>
+    </div>
+</div>
+
+    
+                <!-- Skills Tab Content -->
+                <div class="tab-content" id="skills-content">
+                    <h3>My Skills</h3>
+                    <p>Here are the skills I've honed in various roles over my journey:</p>
+                    <div class="skills-content">
+                        <!-- Data Engineer Skills -->
+                        <div class="skills-card">
+                            <h3>Data Engineer</h3>
+                            <p>Hadoop, Spark, Pyspark, Hive, Sqoop, GCP, HQL</p>
+                        </div>
+                        <!-- Data Science Skills -->
+                        <div class="skills-card">
+                            <h3>Data Science</h3>
+                            <p>Python, Deep Learning and Machine Learning Libraries:</p>
+                            <p>TensorFlow, Keras, Pandas, NumPy, Matplotlib, Scikit-learn, SciPy, Flask</p>
+                        </div>
+                        <!-- Frontend Developer Skills -->
+                        <div class="skills-card">
+                            <h3>Front-end Developer</h3>
+                            <p>HTML, CSS, Bootstrap, JavaScript, Next.js</p>
+                        </div>
+                        <!-- Designing Tools -->
+                        <div class="skills-card">
+                            <h3>Designing Tools</h3>
+                            <p>Figma, Canva</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="Project" class="projects-section">
+        <div class="projects-header">
+            <h2>My Projects</h2>
+        </div>
+        <div class="projects-container">
+            <!-- Project 1 -->
+            <div class="project-card">
+                <a href="https://zenith-bliss.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-image">
+                    <img src="Smart recruiting.jpg" alt="Smart Recruiting Platform">
+                </a>
+                <h3>Smart Recruiting Platform</h3>
+                <p>An AI-driven platform to automate HR functions like resume parsing, job postings, and interview scheduling.</p>
+                <strong>Technologies: HTML, CSS, JavaScript, Firebase, AI APIs</strong>
+            </div>
+            <!-- Project 2 -->
+            <div class="project-card">
+                <a href="https://www.pearlmatricschool.com/" target="_blank" rel="noopener noreferrer" class="project-image">
+                    <img src="School.jpg" alt="School Website">
+                </a>
+                <h3>School Website</h3>
+                <p>A dynamic school website designed on Wix, featuring an intuitive UI, smooth navigation, event updates, and contact forms.</p>
+                <strong>Technologies: Wix</strong>
+            </div>
+            <!-- Project 3 -->
+            <div class="project-card">
+                <a href="https://pdm07-390653045137.us-central1.run.app/" target="_blank" rel="noopener noreferrer" class="project-image">
+                    <img src="Pneumonia.png" alt="Pneumonia Detection">
+                </a>
+                <h3>Pneumonia Detection using CNN</h3>
+                <p>A deep learning-based model to detect pneumonia from chest X-ray images, ensuring accurate medical diagnostics.</p>
+                <strong>Technologies: Python, DL and ML Libraries, Flask</strong>
+            </div>
+            <!-- Project 4 -->
+        </div>
+    </section>
+    
+    
+    
+    
+    
+    
+
+
+    <div class="contact-container" style="max-width: 1200px; margin: 0 auto; padding: 20px;">
+        <div class="contact-info" style="margin-bottom: 20px;">
+            <div style="margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
+                <span style="font-size: 1.5rem;">&#9742;</span>
+                <p style="margin: 0;">Phone: +91 9488894451</p>
+            </div>
+            <div style="margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
+                <span style="font-size: 1.5rem;">&#9993;</span>
+                <p style="margin: 0;">Email: isaam.mj@gmail.com</p>
+            </div>
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <span style="font-size: 1.5rem;">&#128279;</span>
+                <p style="margin: 0;">
+                    LinkedIn: 
+                    <a href="https://www.linkedin.com/in/isaammj/" target="_blank" style="color: #ad5389; text-decoration: none;">View Profile</a>
+                </p>
+            </div>
+        </div>
+        <div class="form-section" style="padding: 20px; background: linear-gradient(to right, #3c1053, #ad5389); border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); color: #ffffff;">
+            <h2 style="margin-bottom: 20px; font-family: 'Roboto Slab', serif;">Connect with me</h2>
+            <form class="form" style="display: flex; flex-direction: column; gap: 15px;">
+                <input type="text" placeholder="Full Name" required style="padding: 10px; border: none; border-radius: 5px; font-size: 1rem;">
+                <div style="display: flex; gap: 10px;">
+                    <input type="email" placeholder="Email address" required style="flex: 1; padding: 10px; border: none; border-radius: 5px; font-size: 1rem;">
+                    <input type="tel" placeholder="Phone number" required style="flex: 1; padding: 10px; border: none; border-radius: 5px; font-size: 1rem;">
+                </div>
+                <textarea placeholder="Type your message here." required style="padding: 10px; border: none; border-radius: 5px; font-size: 1rem; resize: none; height: 100px;"></textarea>
+                <button type="submit" style="padding: 10px; background-color: #3c1053; color: #ffffff; border: none; border-radius: 5px; cursor: pointer; font-size: 1rem;">
+                    Send Message
+                </button>
+            </form>
+        </div>
+    </div>
+    
+      
+      
+    
+    
+    
+
+    <footer>
+        <p>&copy; 2025 Mohamed Isaam M J. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        let currentSlide = 0;
+    
+        // Function to handle slide navigation
+        function moveSlide(direction) {
+            const container = document.getElementById("projectsContainer");
+            const slides = container.querySelectorAll(".project-card");
+            const totalSlides = slides.length;
+    
+            // Update the current slide index
+            currentSlide += direction;
+    
+            // Wrap-around logic
+            if (currentSlide < 0) {
+                currentSlide = totalSlides - 1; // Go to the last slide
+            } else if (currentSlide >= totalSlides) {
+                currentSlide = 0; // Go back to the first slide
+            }
+    
+            // Update transform to slide to the correct project
+            container.style.transform = `translateX(-${currentSlide * 100}%)`;
+        }
+    
+        // Function to handle tab switching
+        function showTab(tabId) {
+            // Select all tab content sections and tab buttons
+            const tabs = document.querySelectorAll(".tab-content");
+            const buttons = document.querySelectorAll(".tab-buttons button");
+    
+            // Hide all tabs and remove the active class from buttons
+            tabs.forEach((tab) => tab.classList.remove("active"));
+            buttons.forEach((button) => button.classList.remove("active"));
+    
+            // Show the selected tab and highlight the corresponding button
+            document.getElementById(tabId).classList.add("active");
+            document.querySelector(`[onclick="showTab('${tabId}')"]`).classList.add("active");
+        }
+    
+        // Function to handle intersection animations
+        document.addEventListener("DOMContentLoaded", () => {
+            const sections = document.querySelectorAll(".section");
+    
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("visible");
+                        }
+                    });
+                },
+                { threshold: 0.1 }
+            );
+    
+            sections.forEach((section) => observer.observe(section));
+    
+            // Set the first tab as active by default
+            const tabs = document.querySelectorAll(".tab-content");
+            const buttons = document.querySelectorAll(".tab-buttons button");
+            tabs[0].classList.add("active");
+            buttons[0].classList.add("active");
+    
+            // Initialize slides for the project container
+            const container = document.getElementById("projectsContainer");
+            const slides = container.querySelectorAll(".project-card");
+            slides.forEach((slide, index) => {
+                slide.style.display = index === 0 ? "flex" : "none";
+            });
+        });
+    </script>
+    
+</body>
+
+</html>

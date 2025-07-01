@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #6c63ff, #a8c0ff);
+      color: white;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 20px auto;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Navigation Bar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: white;
+      margin: 0 15px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .navbar a:hover {
+      text-decoration: underline;
+    }
+
+    /* Hello Section */
+    .hello {
+      text-align: center;
+    }
+
+    .hello h1 {
+      font-size: 28px;
+      margin: 5px 0;
+    }
+
+    .hello p {
+      font-size: 18px;
+    }
+
+    .view-cv-btn {
+      text-decoration: none;
+      color: white;
+      background: #007bff;
+      padding: 10px 20px;
+      border-radius: 5px;
+      display: inline-block;
+      margin-top: 10px;
+    }
+
+    .view-cv-btn:hover {
+      background: #0056b3;
+    }
+
+    /* About Me Section */
+    .about-me {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .about-me img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 2px solid white;
+    }
+
+    .about-me-content {
+      text-align: justify;
+    }
+
+    /* Experience, Education, Skills Section */
+    .experience-education-skills {
+      display: flex;
+      gap: 20px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .buttons button {
+      padding: 10px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-align: left;
+    }
+
+    .buttons button:hover {
+      background: #0056b3;
+    }
+
+    .content-box {
+      flex-grow: 1;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      text-align: justify;
+    }
+
+    /* Skills Containers */
+    .skills-container {
+      display: flex;
+      overflow-x: auto;
+      gap: 10px;
+      padding: 10px 0;
+    }
+
+    .skills-box {
+      min-width: 200px;
+      padding: 10px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      flex: 0 0 auto;
+      text-align: center;
+    }
+
+    /* Projects Section */
+    .projects {
+      display: flex;
+      gap: 20px;
+    }
+
+    .projects .left {
+      flex: 1;
+    }
+
+    .projects .right img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .navigation-arrows {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .navigation-arrows button {
+      padding: 10px;
+      border: none;
+      background: #007bff;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    /* Contact Me Section */
+    .contact-me {
+      display: flex;
+      gap: 20px;
+    }
+
+    .contact-me .left {
+      flex: 1;
+      text-align: left;
+    }
+
+    .contact-me .right {
+      flex: 1;
+    }
+
+    .contact-me form input,
+    .contact-me form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .contact-me form button {
+      padding: 10px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .contact-me form button:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Navigation Bar -->
+    <div class="navbar">
+      <div class="logo">Isaam</div>
+      <div class="links">
+        <a href="#">Home</a>
+        <a href="#">About Me</a>
+        <a href="#">Projects</a>
+        <a href="#">Contact Me</a>
+      </div>
+    </div>
+
+    <!-- Hello Section -->
+    <div class="hello">
+      <h1>Hello Everyone 👋</h1>
+      <p>I'm Mohamed Isaam M J</p>
+      <p>Software Developer, Front-End UI/UX Developer, Data Engineer, Data Scientist</p>
+      <a class="view-cv-btn" href="https://drive.google.com/file/d/1Ps0Fi66eSqL70Zxar7-fdeV7AfYdnENf/view?usp=drive_link" target="_blank">View CV</a>
+    </div>
+
+    <!-- About Me Section -->
+    <div class="about-me">
+      <img src="Image.jpg" alt="Isaam">
+      <div class="about-me-content">
+        <h2>About Me</h2>
+        <p>Final-year Computer Science student with a strong passion for AI, data engineering, and user-centric design. Proficient in Python, machine learning, and Big Data technologies such as Hadoop and Spark, with hands-on experience in building data pipelines, developing deep learning models, and exploring Generative AI. Skilled in designing intuitive digital experiences using HTML, CSS, and Figma, blending creativity with technology. Driven by innovation and a relentless pursuit of impactful solutions, I aim to contribute to cutting-edge projects that shape the future of AI and data-driven decision-making while continuously growing and delivering meaningful results.</p>
+      </div>
+    </div>
+
+    <!-- Remaining Sections -->
+    <!-- Add Experience, Education, Skills, Projects, and Contact Me sections as per the same style above -->
+  </div>
+</body>
+</html>
